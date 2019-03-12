@@ -1,0 +1,2298 @@
+@import 'reset';
+@import 'animate.css';
+@import 'color';
+@import 'font';
+
+.row {
+    margin: 0;
+}
+
+// nav 顶部区域
+.css_nav {
+    background: url(src/csst_top_bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 56em;
+}
+
+.css_nav_left {
+    line-height: 5em;
+    padding-left: 4em;
+    padding-top: 0.5em;
+
+    img {
+        display: block;
+        width: 10em;
+    }
+}
+
+.css_nav_right {
+    line-height: 3em;
+
+    ul {
+        overflow: hidden;
+
+        li {
+            color: #fff;
+            float: left;
+            text-align: center;
+            width: 15%;
+            position: relative;
+        }
+
+        li.active::before {
+            position: absolute;
+            content: ' ';
+            display: block;
+            width: 0.5em;
+            height: 0.5em;
+            left: 0.5em;
+            top: 1.2em;
+            background-color: #fff;
+            border-radius: 50%;
+        }
+    }
+}
+
+.css_nav_row {
+
+    width: 100%;
+    line-height: 2.5em;
+    background: linear-gradient(90deg, #5182ee, #7e57ee);
+    color: $primary-color-text;
+    position: fixed;
+    z-index: 2;
+
+    @media screen and (max-width: 768px) {
+        padding: 0;
+    }
+
+    transition: 0.36s all ease-in-out;
+
+}
+
+// banner区域
+.css_banner_div {
+    padding-top: 6em;
+}
+
+.css_banner_part {
+    padding-top: 5em;
+}
+
+.css_banner_left {
+    span {
+        color: #fff;
+        display: block;
+        margin: auto;
+        font-size: 1.5em;
+        width: 9em;
+        text-align: center;
+    }
+
+    span:first-child {
+        border: 1px solid #fff;
+    }
+}
+
+h2 {
+    color: #fff;
+    text-align: center;
+    font-size: 3em;
+}
+
+.css_banner_left {
+    padding-bottom: 2em;
+}
+
+.css_banner_bg {
+    padding-top: 2em;
+
+    img {
+        display: block;
+        width: 100%;
+    }
+}
+
+.css_banner_ul {
+    ul {
+        padding-top: 5em;
+        display: block;
+        width: 100%;
+        overflow: hidden;
+
+        li {
+            float: left;
+            width: 33%;
+            height: 3em;
+
+            span {
+                color: #fff;
+                display: block;
+                text-align: center;
+                width: 11em;
+                line-height: 2em;
+                background-color: #ffffff19;
+                border-radius: 1em;
+            }
+        }
+    }
+}
+
+// tab三栏
+.css_act_title {
+    width: 100%;
+
+    span {
+        float: left;
+        width: 33%;
+        font-size: 2em;
+        height: 124px;
+        line-height: 124px;
+        text-align: center;
+        position: relative;
+    }
+
+    span.active {
+        color: #fff;
+        background: linear-gradient(41deg, #ee5f5a 0%, #f49c63 100%);
+        border-radius: 0px 19px 19px 19px;
+    }
+
+    span.active::after {
+        position: absolute;
+        left: calc(50% - 1em);
+        bottom: -0.3em;
+        width: 1.5em;
+        height: 0.8em;
+        content: ' ';
+        display: block;
+        background: url(src/recent.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+}
+
+.soft_act_new {
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    height: initial;
+}
+
+// tab 三栏下边内容
+.soft_content_title {
+    width: 100%;
+
+    span {
+        display: block;
+        width: 10em;
+        padding: 0 0.5em;
+        line-height: 2em;
+        font-size: 1.2em;
+        letter-spacing: 1px;
+        margin: auto;
+        color: $primary-color-text;
+        border-radius: 2px;
+        background-color: $title-bg-color;
+    }
+
+    padding-bottom: 1.5em;
+}
+
+.css_tab_title {
+    padding-bottom: 2em;
+}
+
+// 时间规划部分
+.soft_act_content {
+    float: right;
+    width: 100%;
+    height: 580px;
+    position: relative;
+    box-shadow: 0px 1px 29px 0px rgba(136, 56, 244, 0.18);
+}
+
+.soft_act_content1 {
+    padding-bottom: 2em;
+}
+
+.soft_act_content3 {
+    background-color: #ffffff;
+}
+
+.soft_act_content2,
+.soft_act_content3 {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    padding: 5% 0% 2% 0%;
+}
+
+.soft_act_content1,
+.soft_act_content2,
+.soft_act_content3 {
+    position: absolute;
+    display: none;
+    transition: 0.3s opacity ease-in-out;
+}
+
+.soft_act_content1.move-in,
+.soft_act_content2.move-in,
+.soft_act_content3.move-in {
+    display: block;
+    transition: 0.3s opacity ease-in-out;
+    opacity: 0;
+}
+
+.soft_act_content1.active,
+.soft_act_content2.active,
+.soft_act_content3.active {
+    display: block;
+    transition: 0.3s opacity ease-in-out;
+    opacity: 1;
+}
+
+.soft_act_part1 {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    padding-left: 6%;
+
+    li {
+        float: left;
+        width: 90%;
+        height: 105px;
+        text-align: center;
+        opacity: 0.8;
+        padding: 1em;
+
+        dt {
+            display: block;
+            width: 100%;
+            font-size: 1.2em;
+            line-height: 1.5em;
+            text-align: left;
+            padding-bottom: 0.2em;
+        }
+
+        p {
+            display: block;
+            text-align: left;
+            width: 100%;
+        }
+    }
+
+    ul {
+        float: left;
+    }
+
+    .soft_act1_ul1 {
+        overflow: hidden;
+        padding-top: 2em;
+        padding-bottom: 1em;
+
+        li:first-child {
+            margin-bottom: 30px;
+        }
+
+        li:nth-of-type(2) {
+            margin-bottom: 40px;
+        }
+
+        li:nth-of-type(3) {}
+    }
+
+    .soft_act1_ul2 {
+        overflow: hidden;
+        padding-top: 2em;
+        padding-bottom: 1em;
+
+        li:first-child {
+            margin-bottom: 30px;
+        }
+
+        li:nth-of-type(2) {
+            margin-bottom: 40px;
+        }
+
+        li:nth-of-type(3) {}
+    }
+
+    li.active {
+        width: 407px;
+        height: 119px;
+        line-height: 119px;
+        margin-left: -20px;
+    }
+}
+
+.soft_act_bottom {
+    width: 100%;
+    overflow: hidden;
+    padding-top: 2em;
+    padding-bottom: 3em;
+
+    span {
+        float: left;
+        width: 33%;
+        padding-left: 10%;
+        text-align: left;
+        line-height: 2em;
+
+        @media screen and (max-width: 768px) {
+            width: 100%;
+            margin-bottom: 1em;
+        }
+    }
+
+    button,
+    a.button {
+        background-image: linear-gradient(41deg, #1f204f 0%, #2a358d 100%);
+        border-radius: 10px 0px 10px 0px;
+        color: $primary-color-text;
+        height: 3em;
+        line-height: 3em;
+        width: 10em;
+        border-radius: 2px;
+        float: left;
+        padding-left: 3em;
+        position: relative;
+    }
+
+    button::before,
+    a.button::before {
+        content: ' ';
+        position: absolute;
+        left: 0.8em;
+        top: 0.8em;
+        display: block;
+        width: 1.5em;
+        height: 1.5em;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+
+    span:first-child a.button::before {
+        background-image: url(src/feiyong.png);
+    }
+
+    span:nth-of-type(2) a.button::before {
+        background-image: url(src/passnum.png);
+    }
+
+    span:nth-of-type(3) a.button::before {
+        background-image: url(src/enlist.png);
+    }
+}
+
+.soft_act_content1 {
+    overflow: hidden;
+    padding-top: 5%;
+
+    ul {
+        float: left;
+        overflow: hidden;
+        border-right: 1px dotted $active_border_color;
+        padding-top: 2em;
+
+        li {
+            float: left;
+            width: 100%;
+            padding-left: 20%;
+            padding-bottom: 2em;
+
+            span {
+                float: left;
+                width: 100%;
+                line-height: 2em;
+            }
+
+            span:first-child {
+                color: $active_font_color;
+            }
+
+            span:nth-of-type(2) {
+                font-size: 1.2em;
+            }
+        }
+    }
+
+    ul:last-child {
+        border: 0;
+    }
+}
+
+// 考试信息区域
+.soft_info_content {
+    overflow: hidden;
+    width: 100%;
+    border: 1px solid $info_border_color;
+    padding: 1em 0 0 0;
+
+    .soft_info_stitle {
+        dt {
+            display: block;
+            width: 4em;
+            line-height: 1.5em;
+            font-size: 1.2em;
+            border-bottom: 2px solid $border_bottom-color;
+            margin-bottom: 0.5em;
+        }
+    }
+}
+
+.soft_info_bigcontent {
+    position: relative;
+}
+
+.soft_info_bigcontent::before {
+    position: absolute;
+    width: 0;
+    height: 0;
+    content: ' ';
+    display: block;
+    left: calc(50% - 1em);
+    top: -2.9em;
+    border-top: 2em solid transparent;
+    border-bottom: 1em solid $info_border_color;
+    border-left: 1em solid transparent;
+    border-right: 1em solid transparent;
+}
+
+.soft_info_bigcontent::after {
+    position: absolute;
+    width: 0;
+    height: 0;
+    content: ' ';
+    display: block;
+    left: calc(50% - 1em);
+    top: -2.8em;
+    border-top: 2em solid transparent;
+    border-bottom: 1em solid #fff;
+    border-left: 1em solid transparent;
+    border-right: 1em solid transparent;
+}
+
+.soft_info_content {
+    overflow: hidden;
+}
+
+.soft_info_left,
+.soft_info_right {
+    float: left;
+    padding: 0;
+}
+
+.soft_info_left {
+    width: 60%;
+}
+
+.soft_info_right {
+    width: 40%;
+}
+
+.soft_info_part1,
+.soft_info_part2 {
+    border-bottom: 1px solid $info_border_color;
+}
+
+.soft_info_part1,
+.soft_info_part3 {
+    border-right: 1px solid $info_border_color;
+}
+
+.soft_info_part1,
+.soft_info_part2,
+.soft_info_part3,
+.soft_info_part4 {
+    padding: 1em;
+}
+
+.soft_info_part1,
+.soft_info_part2 {
+    padding-top: 0;
+}
+
+.soft_info_part3,
+.soft_info_part4 {
+    padding-bottom: 0;
+}
+
+.soft_info_detail {
+    span {
+        color: #c2c2c2;
+        line-height: 2em;
+    }
+}
+
+.soft_info_half {
+    span {
+        line-height: 2em;
+        padding: 0 0.5em;
+    }
+
+    span:first-child {
+        padding: 0;
+        color: #000;
+    }
+}
+
+.soft_info_right {
+    .soft_info_detail {
+        .soft_info_half {
+            span {
+                display: block;
+                width: 100%;
+                height: 2em;
+                color: #c2c2c2;
+            }
+        }
+    }
+}
+
+.css_nandian_title {
+    padding-top: 6em;
+    padding-bottom: 6em;
+}
+
+// 一级标题
+.soft_team_title {
+    margin: auto;
+    width: 50%;
+    height: 3em;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    position: relative;
+
+    span {
+        position: relative;
+    }
+
+    span::before {
+        position: absolute;
+        display: block;
+        content: ' ';
+        width: 0;
+        height: 0;
+    }
+
+    span:first-child {
+        float: left;
+        border-top: 21px solid transparent;
+        border-left: 21px solid transparent;
+        border-right: 21px solid #ccc;
+        border-bottom: 21px solid transparent;
+        margin-left: -41px;
+        margin-top: -1px;
+    }
+
+    span:nth-of-type(2) {
+        float: right;
+        margin-right: -42px;
+        margin-top: -29px;
+        border-top: 21px solid transparent;
+        border-left: 21px solid #ccc;
+        border-right: 21px solid transparent;
+        border-bottom: 21px solid transparent;
+    }
+
+    span:first-child::before {
+        border-top: 20px solid transparent;
+        border-left: 20px solid transparent;
+        border-right: 20px solid #fff;
+        border-bottom: 20px solid transparent;
+        top: -20px;
+        left: -18px;
+    }
+
+    span:nth-of-type(2)::before {
+        border-top: 20px solid transparent;
+        border-left: 20px solid #fff;
+        border-right: 20px solid transparent;
+        border-bottom: 20px solid transparent;
+        top: -20px;
+        right: -18px;
+    }
+}
+
+.soft_team_title::after {
+    content: ' ';
+    position: absolute;
+    display: block;
+    width: 6em;
+    height: 3em;
+    background-image: url(src/teacher.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    left: calc(50% - 3.5em);
+}
+
+.soft_team_title::after {
+    content: ' ';
+    position: absolute;
+    display: block;
+    width: 6em;
+    height: 3em;
+    background-image: url(src/teacher.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    left: calc(50% - 3.5em);
+}
+
+.soft_team_title {
+    dt {
+        position: relative;
+        display: block;
+        font-size: 2em;
+        width: 8em;
+        text-align: center;
+        height: 2em;
+        margin: auto;
+        margin-top: -1em;
+        background-color: #fff;
+    }
+}
+
+.soft_project_title {
+    @media screen and (min-width: 768px) {
+        dt {
+            width: 14em;
+        }
+    }
+}
+
+// 二级标题
+.soft_two_big {
+    height: 4em;
+}
+
+// 标题描述
+.soft_title_notes {
+    width: 100%;
+    padding: 2em 0;
+
+    span {
+        display: block;
+        width: 100%;
+        font-size: 1.2em;
+        line-height: 2em;
+        text-align: center;
+    }
+}
+
+.soft_two_title {
+    .soft_two_content {
+        width: 100%;
+
+        dt {
+            display: block;
+            font-size: 1.5em;
+            margin: auto;
+            text-align: center;
+            position: relative;
+            width: 5em;
+        }
+
+        dt:before {
+            content: ' ';
+            display: block;
+            width: 2em;
+            position: absolute;
+            height: 2em;
+            left: -2em;
+            top: -0.7em;
+            background-image: url(src/team_title.png);
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+
+    }
+
+    .soft_two_content2 {
+        dt {
+            width: 9em;
+        }
+    }
+}
+
+.soft_two_title .soft_two_content {
+    dt {
+        display: block;
+        font-size: 1.5em;
+        margin: auto;
+        text-align: center;
+        position: relative;
+        width: 5em;
+    }
+
+    dt:before {
+        content: ' ';
+        display: block;
+        width: 2em;
+        position: absolute;
+        height: 2em;
+        left: -2em;
+        top: -0.7em;
+        background-image: url(src/team_title.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+}
+
+.soft_two_title .soft_two_content2 dt {
+    width: 9em;
+}
+
+.css_title2 {
+    padding-top: 4em;
+    padding-bottom: 4em;
+}
+
+// 课程方案标题
+.css_lesson_txt // 学习区域
+
+.css_learn_img {
+    padding-top: 8em;
+
+    img {
+        display: block;
+        width: 100%;
+    }
+}
+
+.css_four_title {
+    padding-top: 4em;
+    padding-bottom: 4em;
+
+    .soft_project_title {
+        dt {
+            width: 6em;
+        }
+    }
+}
+
+.css_left_img {
+    display: block;
+    width: 100%;
+}
+
+.css_learn_content {
+    width: 100%;
+}
+
+.css_learn_div {
+    width: 100%;
+    padding-bottom: 2em;
+}
+
+.css_learn_piece {
+    width: 40%;
+    padding: 1em;
+    box-shadow: 0px 1px 29px 0px rgba(136, 56, 244, 0.18);
+    border-radius: 0px 13px 0px 13px;
+
+    @media screen and (max-width: 1240px) {
+        width: 60%;
+    }
+
+    span {
+        color: #314275;
+    }
+
+    span:first-child {
+        font-size: 1.5em;
+    }
+
+    span:nth-of-type(2) {
+        line-height: 2em;
+    }
+}
+
+.css_learn_right1 {
+    .css_learn_piece {
+        margin: 0;
+    }
+}
+
+.css_learn_right2 {
+    .css_learn_piece {
+        margin-left: 30%;
+
+        @media screen and (max-width: 1240px) {
+            margin-left: 10%;
+        }
+    }
+}
+
+.css_learn_right3 {
+    .css_learn_piece {
+        margin-left: 60%;
+
+        @media screen and (max-width: 1240px) {
+            margin-left: 30%;
+        }
+    }
+}
+
+.css_learn_top {
+    img {
+        display: block;
+        margin: auto;
+    }
+
+    padding-bottom: 1.5em;
+}
+
+.css_learn_bottom {
+    width: 100%;
+
+    span {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+// 课程方案区域
+.css_lesson_title {
+    padding: 3em 0;
+
+    dt {
+        display: block;
+        font-size: 2em;
+        width: 4em;
+        margin: auto;
+        position: relative;
+    }
+
+    dt::before {
+        content: ' ';
+        position: absolute;
+        display: block;
+        content: ' ';
+        width: 1.3em;
+        height: 1.3em;
+        left: -1.5em;
+        top: 0e;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-image: url(src/css_title.png);
+    }
+}
+
+.css_lesson_left,
+.css_lesson_right {
+    padding: 0;
+
+    img {
+        display: block;
+        width: 100%;
+    }
+}
+
+.css_lesson_top {
+    span {
+        display: block;
+        width: 100%;
+        font-size: 1.2em;
+        line-height: 1.5;
+    }
+
+    dt {
+        display: block;
+        width: 100%;
+        font-size: 1.5em;
+        line-height: 2;
+    }
+
+    .css_bottom_border {
+        width: 6em;
+        height: 5px;
+        background-color: #ff74a8;
+    }
+}
+
+.css_lesson_bottom {
+    span {
+        display: block;
+        width: 100%;
+        line-height: 2em;
+    }
+}
+
+.css_lesson_content1 {
+    .css_lesson_right {
+        padding: 8em;
+    }
+}
+
+.css_lesson_content2 {
+    .css_lesson_left {
+        padding: 8em;
+    }
+}
+
+.css_lesson_content3 {
+    .css_lesson_right {
+        padding: 8em;
+    }
+}
+
+// 团队6栏
+.soft_team_part {
+    padding-top: 7em;
+}
+
+// 课程方案与师资团队共同title样式
+.soft_team_title,
+.soft_lesson_title {
+    dt {
+        position: relative;
+        display: block;
+        font-size: 2em;
+        width: 8em;
+        text-align: center;
+        height: 2em;
+        margin: auto;
+        margin-top: -1em;
+        background-color: #fff;
+    }
+}
+
+.soft_team_title {
+    @media screen and (min-width: 768px) {
+        dt {
+            width: 6em;
+        }
+    }
+}
+
+.soft_lesson_title {
+    dt::before {
+        position: absolute;
+        display: block;
+        content: ' ';
+        width: 1.3em;
+        height: 1.3em;
+        left: 0.2em;
+        top: -0.1em;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-image: url(src/team_title.png);
+    }
+}
+
+.soft_team_title {
+    margin: auto;
+    width: 50%;
+    height: 3em;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    position: relative;
+
+    span {
+        position: relative;
+    }
+
+    span::before {
+        position: absolute;
+        display: block;
+        content: ' ';
+        width: 0;
+        height: 0;
+    }
+
+    span:first-child {
+        float: left;
+        border-top: 21px solid transparent;
+        border-left: 21px solid transparent;
+        border-right: 21px solid #ccc;
+        border-bottom: 21px solid transparent;
+        margin-left: -41px;
+        margin-top: -1px;
+    }
+
+    span:nth-of-type(2) {
+        float: right;
+        margin-right: -42px;
+        margin-top: -29px;
+        border-top: 21px solid transparent;
+        border-left: 21px solid #ccc;
+        border-right: 21px solid transparent;
+        border-bottom: 21px solid transparent;
+    }
+
+    span:first-child::before {
+        border-top: 20px solid transparent;
+        border-left: 20px solid transparent;
+        border-right: 20px solid #fff;
+        border-bottom: 20px solid transparent;
+        top: -20px;
+        left: -18px;
+    }
+
+    span:nth-of-type(2)::before {
+        border-top: 20px solid transparent;
+        border-left: 20px solid #fff;
+        border-right: 20px solid transparent;
+        border-bottom: 20px solid transparent;
+        top: -20px;
+        right: -18px;
+    }
+}
+
+.soft_team_title::after {
+    content: ' ';
+    position: absolute;
+    display: block;
+    width: 6em;
+    height: 3em;
+    background-image: url(src/teacher.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    left: calc(50% - 3.5em);
+}
+
+// 软考项目管理专业学习难点区域
+.soft_project_title {
+    @media screen and (min-width: 768px) {
+        dt {
+            width: 14em;
+        }
+    }
+
+}
+
+.soft_class_way {
+
+    @media screen and (min-width: 768px) {
+        dt {
+            width: 6em;
+        }
+    }
+
+}
+
+.soft_title_box {
+    padding-top: 2em;
+    padding-bottom: 3em;
+}
+
+.soft_team_content {
+    overflow: hidden;
+    position: relative;
+    height: 900px;
+    width: 100%;
+}
+
+.soft_team_item {
+    margin-right: 2em;
+    float: left;
+    width: 30%;
+    border-radius: 4px;
+    position: relative;
+}
+
+.soft_team_item {
+    position: absolute;
+}
+
+
+.soft_team_middle {
+    background-color: $bgc-light;
+    color: #08345a;
+    font-size: 1.2em;
+    width: 100%;
+    height: 9em;
+    padding-top: 6em;
+    margin-top: 4em;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+
+    span {
+        width: 100%;
+        line-height: 2em;
+        text-align: center;
+        display: block;
+    }
+}
+
+.soft_team_top {
+    position: relative;
+    width: 100%;
+    height: 0;
+    top: 0;
+    left: 0;
+    padding-top: 1em;
+
+    span {
+        display: block;
+        width: 8em;
+        height: 8em;
+        border-radius: 50%;
+        margin: auto;
+        background-repeat: no-repeat;
+        border: 2px solid #fff;
+        background-size: cover;
+        margin-top: 2em;
+    }
+}
+
+.soft_team_item:first-child {
+    left: 2%;
+    top: 0;
+
+    .soft_team_top {
+        span {
+            background-image: url(src/liupeichun.jpg);
+        }
+    }
+}
+
+.soft_team_item:nth-of-type(2) {
+    left: 35%;
+    top: 0;
+
+    .soft_team_top {
+        span {
+            background-image: url(src/liufang.jpg);
+        }
+    }
+}
+
+.soft_team_item:nth-of-type(3) {
+    left: 68%;
+    top: 0;
+
+    .soft_team_top {
+        span {
+            background-image: url(src/songdan.jpg);
+        }
+    }
+}
+
+.soft_team_item:nth-of-type(4) {
+    left: 2%;
+    top: 30em;
+
+    .soft_team_top {
+        span {
+            background-image: url(src/wangqifu.jpg);
+        }
+    }
+}
+
+.soft_team_item:nth-of-type(5) {
+    left: 35%;
+    top: 30em;
+
+    .soft_team_top {
+        span {
+            background-image: url(src/wangli.jpg);
+        }
+    }
+}
+
+.soft_team_item:nth-of-type(6) {
+    left: 68%;
+    top: 30em;
+
+    .soft_team_top {
+        span {
+            background-image: url(src/huguangchao.jpg);
+        }
+    }
+}
+
+// .soft_team_item.active {
+//     .soft_team_middle {
+//         height: 13em;
+//         padding-top: 10em;
+//         margin-top: 0;
+//         color: #fff;
+//         background-color: #08345a;
+//         box-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
+//     }
+
+//     .soft_team_top {
+//         span {
+//             width: 9em;
+//             height: 9em;
+//         }
+//     }
+
+//     .soft_team_bottom {
+//         box-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
+//     }
+// }
+
+
+
+.soft_team_bottom {
+    width: 100%;
+    padding-top: 4em;
+    overflow: hidden;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+
+    span {
+        float: left;
+        width: 100%;
+        line-height: 2em;
+        text-align: center;
+    }
+}
+
+
+// 行业内训区域
+.soft_largest_box8 {
+    background-color: #347dbb;
+    background-image: url(src/chanp_1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: 50%;
+
+    .row {
+        padding-top: 225px;
+        padding-bottom: 225px;
+    }
+}
+
+.soft_trade_top {
+    position: relative;
+    z-index: 1;
+    padding-top: 6em;
+}
+
+// 制定服务区域
+.soft_server {
+    padding-top: 4em;
+}
+
+.soft_serve_title {
+    @media screen and (min-width: 768px) {
+        dt {
+            width: 10em;
+        }
+    }
+}
+
+.soft_srver_row1 {
+    padding-top: 6em;
+}
+
+.soft_server_bg {
+    width: 100%;
+    box-shadow: 0px 1px 29px 0px rgba(136, 56, 244, 0.18);
+    padding: 1em;
+
+    img {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.soft_server_logo {
+    padding-top: 4em;
+
+    img {
+        display: block;
+        width: 12em;
+        margin: auto;
+    }
+}
+
+.soft_server_text {
+    padding-top: 2em;
+    width: 100%;
+
+    dt {
+        font-weight: normal;
+        font-size: 1.5em;
+        display: block;
+        width: 100%;
+        line-height: 2em;
+        text-align: center;
+    }
+
+    span {
+        text-align: center;
+        width: 100%;
+        font-size: 1.2em;
+        display: block;
+    }
+}
+
+// 警告文字区域
+
+.error_span {
+    font-size: 1.2em;
+    display: block;
+    line-height: 2em;
+}
+
+// 开班计划区域
+.soft_open_row {}
+
+.soft_open_part {
+    padding-left: 3em;
+    padding-top: 5em;
+    overflow: hidden;
+
+    .soft_open_title {
+        @media screen and (min-width: 768px) {
+            dt {
+                width: 8em;
+            }
+        }
+    }
+
+    .soft_open_topbox {
+        padding-bottom: 2em;
+    }
+
+    .soft_open_content {
+        position: relative;
+        padding: 2em 3em 4em 3em;
+        margin-right: 3em;
+        width: 98%;
+        float: left;
+        border-top: 3px solid $open_border_color;
+    }
+
+    .soft_open_describe {
+
+        .soft_content1 {
+            width: 100%;
+            background-color: $background-color;
+            height: 6em;
+            overflow: hidden;
+            padding-top: 0.5em;
+
+            span {
+                float: left;
+                width: 100%;
+                color: #821C21;
+                text-align: center;
+                line-height: 2;
+            }
+
+            span:first-child {
+                font-size: 1.5em;
+            }
+
+            span:nth-of-type(2) {
+                font-size: 1em;
+            }
+        }
+    }
+
+    .soft_open_info {
+        height: 4em;
+        padding: 1em 1em 0 1em;
+
+        span {
+            display: block;
+            position: relative;
+            width: 100%;
+            text-align: left;
+            font-size: 1.2em;
+            font-weight: bold;
+            line-height: 3em;
+            padding-left: 2.2em;
+            border-bottom: 2px solid $bgc-light;
+        }
+
+        span:before {
+            content: ' ';
+            position: absolute;
+            background-image: url(src/open_icon1.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            display: block;
+            width: 1.5em;
+            height: 1.5em;
+            left: 0em;
+            top: 0.8em;
+        }
+    }
+
+    .soft_open_qi {
+        float: left;
+        margin-right: 2%;
+        padding: 0;
+        width: 23%;
+        overflow: hidden;
+
+        @media screen and (max-width: 768px) {
+            width: 100%;
+        }
+
+        dt {
+            float: left;
+            width: 100%;
+            font-size: 1.5em;
+            color: $primary-color-text;
+            background-color: $primary-color;
+            line-height: 2.5em;
+            text-align: center;
+        }
+
+        ul {
+            float: left;
+            width: 100%;
+            overflow: hidden;
+            padding-top: 2em;
+
+            li {
+                width: 100%;
+                float: left;
+                overflow: hidden;
+                position: relative;
+                padding-left: 5.5em;
+                height: 7em;
+
+                span {
+                    float: left;
+                    width: 100%;
+                }
+
+                span:first-child {
+                    line-height: 3em;
+                    font-size: 1.2em;
+                }
+
+                span:nth-of-type(2) {
+                    line-height: 2em;
+                    color: $open_font_color;
+                }
+            }
+
+            li::before {
+                content: ' ';
+                position: absolute;
+                display: block;
+                width: 2em;
+                height: 2em;
+                left: 2em;
+                top: 1em;
+                background-size: contain;
+                color: $primary-color;
+                background-repeat: no-repeat;
+            }
+
+
+            li:first-child::before {
+                background-image: url(src/open_icon2.png);
+            }
+
+            li:nth-of-type(2)::before {
+                background-image: url(src/open_icon3.png);
+            }
+
+            li:nth-of-type(3)::before {
+                background-image: url(src/open_icon4.png);
+            }
+
+
+        }
+    }
+
+    .soft_set {
+        padding-top: 2em;
+        width: 100%;
+        overflow: hidden;
+
+        .soft_set_info {
+            float: left;
+            line-height: 2em;
+            overflow: hidden;
+            text-align: center;
+            width: 100%;
+            padding-top: 1em;
+
+            span {
+                width: 100%;
+                line-height: 2em;
+                float: left;
+                text-align: center;
+
+                b {
+                    color: $title-bg-color;
+                }
+            }
+        }
+
+        .soft_set_reset {
+            float: left;
+            width: 100%;
+
+            button {
+                display: block;
+                width: 8em;
+                background-color: #347dbb;
+                color: #fff;
+                border-radius: 2px;
+                margin: auto;
+            }
+
+            button:hover {
+                border-color: #347dbb;
+            }
+
+        }
+    }
+
+    .soft_open_qi:last-child {
+        margin: 0;
+    }
+
+    .soft_join_btn {
+        position: relative;
+        z-index: 1;
+    }
+
+    .soft_open_qi.active {
+        box-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
+
+        dt {
+            background-color: #347dbb;
+        }
+
+        .soft_content1 span {
+            color: #347dbb;
+        }
+
+        .soft_open_info {
+            span::before {
+                background-image: url(src/open_icon5.png);
+            }
+        }
+
+        ul {
+            li:first-child::before {
+                background-image: url(src/open_icon6.png);
+            }
+
+            li:nth-of-type(2)::before {
+                background-image: url(src/open_icon7.png);
+            }
+
+            li:nth-of-type(3)::before {
+                background-image: url(src/open_icon8.png);
+            }
+
+
+        }
+    }
+
+    .soft_open_content::before {
+        content: ' ';
+        width: 1em;
+        height: 1em;
+        position: absolute;
+        left: 0;
+        background-color: $open_border_color;
+        top: -2em;
+    }
+
+    .soft_open_content::after {
+        content: ' ';
+        width: 3px;
+        height: 37em;
+        position: absolute;
+        left: 2em;
+        background-color: $open_border_color;
+        top: -2em;
+    }
+}
+
+// 关于我们区域
+.soft_about_us {
+    padding-top: 4em;
+    width: 100%;
+}
+
+.soft_about_title {
+    width: 100%;
+    padding-top: 4em;
+}
+
+.soft_about_content {
+    width: 100%;
+    padding-top: 10em;
+
+    ul {
+        width: 100%;
+        position: relative;
+
+        li {
+            float: left;
+            margin-right: 1em;
+            position: relative;
+            z-index: 1;
+
+            span {
+                display: block;
+                width: 100%;
+                text-align: center;
+                line-height: 1.5em;
+                margin: auto;
+            }
+        }
+
+        li:nth-of-type(1),
+        li:nth-of-type(3),
+        li:nth-of-type(5) {
+            margin-top: 8em;
+        }
+
+        .soft_about_info {
+            box-shadow: 0px 1px 29px 0px rgba(136, 56, 244, 0.18);
+            border-radius: 10px;
+            width: 14em;
+            height: 14em;
+            padding-top: calc(7em - 1.5em);
+            position: relative;
+            background-color: #fff;
+            z-index: 1;
+        }
+
+        li::before,
+        li::after {
+            position: absolute;
+            content: ' ';
+            display: block;
+            background-repeat: no-repeat;
+            background-size: contain;
+            z-index: -1;
+        }
+
+        li:first-child::before {
+            width: 9em;
+            height: 12em;
+            top: 7.5em;
+            left: 2em;
+            background-image: url(src/about_us1.png);
+        }
+
+        li:nth-of-type(2)::before {
+            width: 7em;
+            height: 8em;
+            right: -3em;
+            top: -3em;
+            background-image: url(src/about_us3.png);
+        }
+
+        li:nth-of-type(2)::after {
+            width: 3em;
+            z-index: 1;
+            height: 3em;
+            top: -1.5em;
+            right: 1em;
+            background-image: url(src/about_us2.png);
+        }
+
+        li:nth-of-type(4)::before {
+            width: 7em;
+            height: 7em;
+            bottom: -3.5em;
+            left: calc(50% - 3.5em);
+            background-image: url(src/about_us4.png);
+        }
+
+        li:nth-of-type(5)::before {
+            z-index: 2;
+            width: 4em;
+            height: 4em;
+            top: -2em;
+            right: 1em;
+            background-image: url(src/about_us5.png);
+        }
+    }
+}
+
+// 方案咨询区域
+.soft_call_largest {
+    padding-top: 8em;
+    width: 100%;
+
+    .soft_call_btn {
+        display: block;
+        font-size: 1.2em;
+        width: 8em;
+        text-align: center;
+        border-radius: 4px;
+        line-height: 2em;
+        color: #FFFFFF;
+        border: 1px solid #347dbb;
+        margin-left: calc(50% - 4em);
+        background-color: #347dbb;
+    }
+
+    a:hover {
+        text-decoration: none;
+    }
+}
+
+
+// 获取验证码框框
+.soft_get_code {
+    cursor: pointer;
+}
+
+
+// 优势区域
+.ad_max_div {
+    width: 90%;
+    margin: auto;
+    padding: 6em 2em 2em 2em;
+    overflow: hidden;
+
+    @media screen and (max-width: 768px) {
+        padding: 2em 1em;
+    }
+}
+
+.soft_ad_title {
+    @media screen and (min-width: 768px) {
+        dt {
+            width: 7em;
+        }
+    }
+}
+
+.ad_content_div1,
+.ad_content_div2,
+.ad_content_div3 {
+    float: left;
+    width: 100%;
+    padding: 4em 0;
+}
+
+.ad_after_bg {
+    float: left;
+    width: 0;
+    height: 422px;
+    position: relative;
+}
+
+.ad_after_bg::after {
+    position: absolute;
+    right: -2em;
+    bottom: 0;
+    content: ' ';
+    display: block;
+    width: 30px;
+    height: 288px;
+    background-image: url(src/after_bg.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+@media screen and (max-width:768px) {
+    .ad_after_bg {
+        display: none;
+    }
+}
+
+.ad_content_div1::after,
+.ad_content_div2::after {}
+
+.ad_content_div1,
+.ad_content_div2 {
+
+    // border-right: 1px solid #ddd;
+    @media screen and (max-width: 768px) {
+        border: none;
+    }
+}
+
+.ad_img1,
+.ad_img2,
+.ad_img3 {
+    width: 100%;
+    height: 8em;
+
+    img {
+        display: block;
+        width: 6.5em;
+        margin: auto;
+    }
+}
+
+.ad_big_font1,
+.ad_big_font2,
+.ad_big_font3 {
+    font-size: 1.5em;
+    text-align: center;
+    margin-top: 0.5em;
+    font-weight: bold;
+}
+
+.ad_suggest1,
+.ad_suggest2,
+.ad_suggest3 {
+    display: block;
+    text-align: center;
+    color: #727171;
+}
+
+// .ad_suggest1::after,
+// .ad_suggest2::after,
+// .ad_suggest3::after {
+//     content: ' ';
+//     display: block;
+//     width: 2em;
+//     height: 0.2em;
+//     background-color: #FC766A;
+//     margin: auto;
+//     margin-top: 1em;
+// }
+.ad_ul1,
+.ad_ul2,
+.ad_ul3 {
+    margin-top: 1em;
+    overflow: hidden;
+    width: 100%;
+
+    li {
+        float: left;
+        width: 33%;
+        text-align: center;
+        line-height: 4em;
+
+        b {
+            font-size: 1.5em;
+
+            @media screen and (max-width: 768px) {
+                font-size: 1.2em;
+            }
+        }
+
+        span {
+            float: left;
+            width: 100%;
+            line-height: 1.5em;
+        }
+
+        span:nth-of-type(2) {
+            font-size: 1.2em;
+            color: #727171;
+        }
+    }
+
+    li:first-child,
+    li:nth-of-type(2) {
+        border-right: 1px solid #ddd;
+    }
+}
+
+@media screen and (max-width:768px) {
+
+    .ad_content_div1,
+    .ad_content_div2,
+    .ad_content_div3 {
+        width: 100%;
+        overflow: hidden;
+        margin-bottom: 2em;
+    }
+
+    .ad_img1,
+    .ad_img2,
+    .ad_img3 {
+        float: left;
+        width: 7em;
+        margin-right: 1em;
+    }
+
+    .ad_img1 img,
+    .ad_img2 img,
+    .ad_img3 img {
+        margin-left: 1em;
+    }
+
+    .ad_content_div1>dd,
+    .ad_content_div2>dd,
+    .ad_content_div3>dd,
+    .ad_content_div1>span,
+    .ad_content_div2>span,
+    .ad_content_div3>span {
+        float: left;
+        width: calc(100% - 8em);
+    }
+
+    .ad_big_font1,
+    .ad_big_font2,
+    .ad_big_font3 {
+        text-align: left;
+    }
+
+    .ad_suggest1,
+    .ad_suggest2,
+    .ad_suggest3 {
+        text-align: left;
+    }
+
+    .ad_ul1,
+    .ad_ul2,
+    .ad_ul3 {
+        padding-left: 0;
+        float: left;
+    }
+
+    .ad_suggest1::after,
+    .ad_suggest2::after,
+    .ad_suggest3::after {
+        margin-left: 0;
+    }
+}
+
+.ad_ul_div {
+    padding-top: 5em;
+    overflow: hidden;
+}
+
+// 底部轮播图盒子
+.soft_bottom_carousel {}
+
+// 底部轮播区域
+.carousel-inner {
+    width: 100%;
+
+    .item {
+        width: 100%;
+        height: 45em;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+.soft_bottom_leftdiv {
+    ul {
+        overflow: hidden;
+        width: 100%;
+
+        li {
+            float: left;
+            width: 100%;
+            color: $open_font_color;
+            text-align: center;
+
+            dt {
+                text-align: center;
+                font-size: 2em;
+                font-weight: normal;
+            }
+
+            span {
+                color: $primary-color;
+            }
+        }
+
+        li:first-child {
+            padding-bottom: 1.5em;
+        }
+
+        li:nth-of-type(2) {
+            font-size: 2em;
+        }
+
+        li img {
+            width: 100%;
+        }
+
+        li:nth-of-type(4) {
+            font-size: 1.5em;
+            font-weight: bold;
+            line-height: 2em;
+            color: $primary-color;
+        }
+
+        li:last-child {
+            font-size: 2em;
+        }
+    }
+}
+
+.soft_lb_div {
+    position: relative;
+    padding-bottom: 2em;
+}
+
+.soft_bottom_leftdiv {
+    position: relative;
+    border-right: 1px solid $primary-deep-color;
+    height: 630px;
+}
+
+.soft_bottom_leftdiv::before {
+    position: absolute;
+    content: ' ';
+    width: 1em;
+    height: 1em;
+    right: -0.5em;
+    top: calc(50% - 0.5em);
+    background-color: #fff;
+}
+
+.soft_bottom_leftdiv::after {
+    position: absolute;
+    content: ' ';
+    width: 0.6em;
+    height: 0.6em;
+    border-radius: 50%;
+    right: -0.35em;
+    top: calc(50% - 0.3em);
+    background-color: $primary-deep-color;
+}
+
+.carousel-inner // 有序li状态
+
+.carousel-indicators .active {
+    margin: 8px 10px;
+}
+
+
+.carousel-indicators li {
+    width: 16px;
+    margin: -2px 6px;
+    height: 16px;
+    border: 4px solid $carousel_point_bgcolor;
+}
+
+.carousel-indicators li.active {
+    border: none;
+    background-color: #000;
+}
+
+// 左右按钮 
+.carousel-control {
+    height: 6em;
+    margin-top: 14em;
+    position: absolute;
+    z-index: 1;
+}
+
+.carousel-control.left,
+.carousel-control.right {
+    background-image: none;
+}
+
+.carousel-control.left::before,
+.carousel-control.right::before {
+    font-size: 2em;
+    font-family: 'Glyphicons Halflings';
+    color: #fff;
+    display: block;
+}
+
+.carousel-control.left::before {
+    content: '\e257';
+}
+
+.carousel-control.right::before {
+    content: '\e258';
+}
+
+// 底部测试区域
+.soft_test_part {
+    position: relative;
+    background-color: $test_bgcolor;
+}
+
+.soft_test_part::after {
+    background-color: $test_bgcolor;
+    position: absolute;
+    bottom: -1em;
+    content: '';
+    left: calc(50% - 1em);
+    display: block;
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+}
+
+.soft_test_content {
+    margin: auto;
+    width: 60%;
+    overflow: hidden;
+    height: 5em;
+}
+
+.soft_test_left {
+    float: left;
+    width: 20%;
+    overflow: hidden;
+
+    img {
+        display: block;
+        width: 4em;
+        float: right;
+        margin-top: 0.5em;
+    }
+}
+
+.soft_test_right {
+    width: 80%;
+    float: left;
+    line-height: 3em;
+    overflow: hidden;
+    padding-top: 1em;
+
+    h3 {
+        float: left;
+        color: $primary-color-text;
+        padding: 0 1em;
+        line-height: 1.5em;
+    }
+
+    button {
+        position: relative;
+        float: left;
+        color: $primary-color-text;
+        width: 8em;
+        border-radius: 4px;
+        padding-left: 3em;
+        margin-top: 0.5em;
+        background-color: #347dbb;
+    }
+
+    button::before {
+        font-family: 'Glyphicons Halflings';
+        content: ' \e065';
+        position: absolute;
+        font-size: 1.5em;
+        left: 0.6em;
+        top: 0;
+    }
+}
+
+.soft_banner_div {
+    width: 100%;
+    background-color: $open_border_color;
+}
+
+.soft_bottom_part {
+    padding: 2em 1em;
+    color: #ffffff;
+
+
+    dt {
+        float: left;
+        font-weight: normal;
+        font-size: 1.2em;
+        width: 100%;
+        line-height: 3em;
+    }
+
+    ul li {
+        a {
+            color: #ffffff;
+        }
+
+        a:hover {
+            text-decoration: none;
+        }
+    }
+}
+
+.soft_bottom_part a {
+    color: #fff;
+    line-height: 2;
+}
+
+.soft_bottom_left {
+    overflow: hidden;
+    border-right: 1px solid #fff;
+
+    ul {
+        width: 30%;
+        float: left;
+        overflow: hidden;
+
+        li {
+            float: left;
+            width: 100%;
+            line-height: 2em;
+        }
+    }
+
+    ul:nth-of-type(1) {
+        width: 40%;
+    }
+
+    .soft_left_bottom {
+        overflow: hidden;
+        width: 100%;
+        float: left;
+
+        ul {
+            width: 100%;
+
+            li {
+                width: auto;
+                padding: 0 1em;
+            }
+
+            li:first-child {
+                padding: 0;
+                padding-right: 1em;
+            }
+        }
+    }
+}
+
+.soft_bottom_right {
+    overflow: hidden;
+
+    ul {
+        float: left;
+        width: 100%;
+
+        li {
+            float: left;
+            padding: 0 1em;
+        }
+    }
+
+    .soft_bottom_s1,
+    .soft_bottom_s2 {
+        li:first-child {
+            padding: 0;
+            padding-right: 1em;
+        }
+    }
+
+    dd {
+        a {
+            color: #ffffff;
+            line-height: 2em;
+        }
+    }
+}
+
+.soft_alert_submit {
+    width: 100%;
+    height: 100%;
+}
+
+.soft_none {
+    display: none;
+}
+
+.soft_indent {
+    text-indent: 2em;
+    line-height: 2em;
+}
+
+// 模拟测试按钮
+.btn-primary {
+    border-color: transparent;
+}
