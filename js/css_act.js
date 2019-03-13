@@ -59,16 +59,16 @@ function start_fuc() {
                 // console.log(event1.data[i].activity_content);
                 // console.log($(".soft_open_qi").eq(i).find("li.soft_name span:eq(2)"));
                 setCookie("page_token", event1)
-                $(".soft_open_qi").eq(i).find("li.soft_content1 span:eq(0)").text(event1.data[i].activity_content.title1);
-                $(".soft_open_qi").eq(i).find("li.soft_content1 span:eq(1)").text(event1.data[i].activity_content.content1);
-                $(".soft_open_qi").eq(i).find("li.soft_content2 span:eq(0)").text(event1.data[i].activity_content.title2);
-                $(".soft_open_qi").eq(i).find("li.soft_content2 span:eq(1)").text(event1.data[i].activity_content.content2);
-                $(".soft_open_qi").eq(i).find("li.soft_content3 span:eq(0)").text(event1.data[i].activity_content.title3);
-                $(".soft_open_qi").eq(i).find("li.soft_content3 span:eq(1)").text(event1.data[i].activity_content.content3);
-                $(".soft_open_qi").eq(i).find("li.soft_content4 span:eq(0)").text(event1.data[i].activity_content.title4);
-                $(".soft_open_qi").eq(i).find("li.soft_content4 span:eq(1)").text(event1.data[i].activity_content.content4);
-                $(".soft_open_qi").eq(i).find(".soft_set_info b").text(event1.data[i].max_number - event1.data[i].sign_up_number);
-                $(".soft_open_qi").eq(i).find(".soft_qi_num").text(event1.data[i].activity_content.head_name);
+                $(".css_open_qi").eq(i).find("li.soft_content1 span:eq(0)").text(event1.data[i].activity_content.title1);
+                $(".css_open_qi").eq(i).find("li.soft_content1 span:eq(1)").text(event1.data[i].activity_content.content1);
+                $(".css_open_qi").eq(i).find("li.soft_content2 span:eq(0)").text(event1.data[i].activity_content.title2);
+                $(".css_open_qi").eq(i).find("li.soft_content2 span:eq(1)").text(event1.data[i].activity_content.content2);
+                $(".css_open_qi").eq(i).find("li.soft_content3 span:eq(0)").text(event1.data[i].activity_content.title3);
+                $(".css_open_qi").eq(i).find("li.soft_content3 span:eq(1)").text(event1.data[i].activity_content.content3);
+                $(".css_open_qi").eq(i).find("li.soft_content4 span:eq(0)").text(event1.data[i].activity_content.title4);
+                $(".css_open_qi").eq(i).find("li.soft_content4 span:eq(1)").text(event1.data[i].activity_content.content4);
+                $(".css_open_qi").eq(i).find(".soft_set_info b").text(event1.data[i].max_number - event1.data[i].sign_up_number);
+                $(".css_open_qi").eq(i).find(".soft_qi_num").text(event1.data[i].activity_content.head_name);
                 setCookie("page_token" + [i] + "", Array(event1.data[i].page_token));
             }
 
@@ -86,8 +86,9 @@ $(document).ready(function () {
         var index = $(this).index();
         $('#tabs_content .soft_lesson_content').eq(index).fadeIn(10).siblings('#tabs_content .soft_lesson_content').hide();
     });
-    $("#open_four .soft_open_qi").hover(function () {
-        $(this).addClass("active animated pulse").siblings().removeClass("active animated pulse");
+    $("#open_four .css_open_qi").hover(function () {
+        $(".soft_open_qi").removeClass("active animated pulse");
+        $(this).find(".soft_open_qi").addClass("active animated pulse");
     });
     $("#soft_act1 li").click(function () {
         $(this).addClass("active animated pulse").siblings().removeClass("active animated pulse");
@@ -123,8 +124,8 @@ $(document).ready(function () {
         $('#message-text').val('');
         $("#message-code").val('');
         $(".soft_get_code").html("获取验证码");
-        var index = $(this).parent().parent().parent().index();
-        // console.log(index);
+        var index = $(this).parent().parent().parent().parent().index();
+        console.log(index);
         act_num = index;
         // console.log(act_num);
         $(".modal-body").append('<div class="alert alert-danger error_btn alert-dismissible fade in soft_none" id="error_alert" role="alert" "><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button><h4>警告</h4><p id="error_info"></p></div><div id="success_alert" class="alert success_btn alert-success soft_none"><a href="#" class="close" data-dismiss="alert">&times;</a><h4>提示</h4><p id="success_info"></p> </div>');

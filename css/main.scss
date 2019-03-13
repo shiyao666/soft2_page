@@ -1342,6 +1342,18 @@ h2 {
     padding-top: 5em;
     overflow: hidden;
 
+    // 期数区域
+    .soft_qi_num {
+        float: left;
+        width: 100%;
+        font-size: 1.5em;
+        color: #a00d0d;
+        background-color: $primary-color-text;
+        line-height: 2.5em;
+        text-align: center;
+        margin-bottom: 0.5em;
+    }
+
     .soft_open_title {
         @media screen and (min-width: 768px) {
             dt {
@@ -1424,22 +1436,13 @@ h2 {
         float: left;
         margin-right: 2%;
         padding: 0;
-        width: 23%;
-        overflow: hidden;
+        width: 100%;
+        position: relative;
 
         @media screen and (max-width: 768px) {
             width: 100%;
         }
 
-        dt {
-            float: left;
-            width: 100%;
-            font-size: 1.5em;
-            color: $primary-color-text;
-            background-color: $primary-color;
-            line-height: 2.5em;
-            text-align: center;
-        }
 
         ul {
             float: left;
@@ -1556,11 +1559,7 @@ h2 {
     }
 
     .soft_open_qi.active {
-        box-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
-
-        dt {
-            background-color: #347dbb;
-        }
+        box-shadow: -5px 6px 8px 0px rgba(0, 0, 0, 0.2);
 
         .soft_content1 span {
             color: #347dbb;
@@ -1584,9 +1583,19 @@ h2 {
             li:nth-of-type(3)::before {
                 background-image: url(src/open_icon8.png);
             }
-
-
         }
+    }
+
+    .soft_open_qi.active::before {
+        content: ' ';
+        position: absolute;
+        display: block;
+        width: 2em;
+        height: 1.5em;
+        background-image: url(src/recent.png);
+        background-size: cover;
+        left: calc(50% - 1em);
+        top: -0.8em;
     }
 
     .soft_open_content::before {
@@ -2176,7 +2185,7 @@ h2 {
 
 .soft_banner_div {
     width: 100%;
-    background-color: $open_border_color;
+    background-color: #fcfcfc;
 }
 
 .soft_bottom_part {
@@ -2204,8 +2213,14 @@ h2 {
 }
 
 .soft_bottom_part a {
-    color: #fff;
+    color: #ccc;
     line-height: 2;
+}
+
+.soft_bottom_part {
+    h3 {
+        color: #000;
+    }
 }
 
 .soft_bottom_left {

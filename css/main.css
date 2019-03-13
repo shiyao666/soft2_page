@@ -1810,6 +1810,15 @@ h2 {
   padding-left: 3em;
   padding-top: 5em;
   overflow: hidden; }
+  .soft_open_part .soft_qi_num {
+    float: left;
+    width: 100%;
+    font-size: 1.5em;
+    color: #a00d0d;
+    background-color: #FFFFFF;
+    line-height: 2.5em;
+    text-align: center;
+    margin-bottom: 0.5em; }
   @media screen and (min-width: 768px) {
     .soft_open_part .soft_open_title dt {
       width: 8em; } }
@@ -1866,19 +1875,11 @@ h2 {
     float: left;
     margin-right: 2%;
     padding: 0;
-    width: 23%;
-    overflow: hidden; }
+    width: 100%;
+    position: relative; }
     @media screen and (max-width: 768px) {
       .soft_open_part .soft_open_qi {
         width: 100%; } }
-    .soft_open_part .soft_open_qi dt {
-      float: left;
-      width: 100%;
-      font-size: 1.5em;
-      color: #FFFFFF;
-      background-color: #821C21;
-      line-height: 2.5em;
-      text-align: center; }
     .soft_open_part .soft_open_qi ul {
       float: left;
       width: 100%;
@@ -1953,9 +1954,7 @@ h2 {
     position: relative;
     z-index: 1; }
   .soft_open_part .soft_open_qi.active {
-    box-shadow: 0 0 4px rgba(0, 0, 0, 0.6); }
-    .soft_open_part .soft_open_qi.active dt {
-      background-color: #347dbb; }
+    box-shadow: -5px 6px 8px 0px rgba(0, 0, 0, 0.2); }
     .soft_open_part .soft_open_qi.active .soft_content1 span {
       color: #347dbb; }
     .soft_open_part .soft_open_qi.active .soft_open_info span::before {
@@ -1966,6 +1965,16 @@ h2 {
       background-image: url(src/open_icon7.png); }
     .soft_open_part .soft_open_qi.active ul li:nth-of-type(3)::before {
       background-image: url(src/open_icon8.png); }
+  .soft_open_part .soft_open_qi.active::before {
+    content: ' ';
+    position: absolute;
+    display: block;
+    width: 2em;
+    height: 1.5em;
+    background-image: url(src/recent.png);
+    background-size: cover;
+    left: calc(50% - 1em);
+    top: -0.8em; }
   .soft_open_part .soft_open_content::before {
     content: ' ';
     width: 1em;
@@ -2412,7 +2421,7 @@ h2 {
 
 .soft_banner_div {
   width: 100%;
-  background-color: #08345a; }
+  background-color: #fcfcfc; }
 
 .soft_bottom_part {
   padding: 2em 1em;
@@ -2429,8 +2438,11 @@ h2 {
     text-decoration: none; }
 
 .soft_bottom_part a {
-  color: #fff;
+  color: #ccc;
   line-height: 2; }
+
+.soft_bottom_part h3 {
+  color: #000; }
 
 .soft_bottom_left {
   overflow: hidden;
