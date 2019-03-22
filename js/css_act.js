@@ -51,7 +51,7 @@ function start_fuc() {
         async: true,
         url: 'https://erp.csst.com.cn/activity/enroll/page',
         data: {
-            "act_token": "afuxnsd524d"
+            "act_token": "msytklsr8754"
         },
         success: function (event1) {
             // console.log(event1.data.length)
@@ -95,11 +95,11 @@ $(document).ready(function () {
         $("#soft_act2 li").removeClass("active animated pulse");
 
     });
-    $("#soft_act2 li").click(function () {
-        $(this).addClass("active animated pulse").siblings().removeClass("active animated pulse");
-        $("#soft_act1 li").removeClass("active animated pulse");
+    // $("#soft_act2 li").click(function () {
+    //     $(this).addClass("active animated pulse").siblings().removeClass("active animated pulse");
+    //     $("#soft_act1 li").removeClass("active animated pulse");
 
-    })
+    // })
 })
 // 获取act_token所在索引定位
 var act_num = null;
@@ -446,12 +446,9 @@ $(document).ready(function () {
     //加密成md5
     var passwd = $.md5(password);
     localStorage.setItem("user_token", passwd)
-    $.get("https://erp.csst.com.cn/activity/enroll/browse&user_token=" + localStorage.user_token + "&act_token=afuxnsd524d", function (data, status) {
+    $.get("https://erp.csst.com.cn/activity/enroll/browse&user_token=" + localStorage.user_token + "&act_token=msytklsr8754", function (data, status) {
         // alert("数据：" + data + "\n状态：" + status);
     });
-    console.log($(window).scrollTop());
-    console.log($(".soft_floor").eq(3).height());
-    console.log($(window).height());
 });
 // 滚动到开班计划区域 刷新事件
 $(window).scroll(function () {

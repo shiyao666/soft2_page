@@ -14,17 +14,27 @@
     background-size: cover;
     width: 100%;
     height: 56em;
+
+    @media screen and (max-width: 768px) {
+        height: 40em;
+    }
 }
 
 .css_nav_left {
     line-height: 5em;
-    padding-left: 4em;
-    padding-top: 0.5em;
 
     img {
         display: block;
         width: 10em;
     }
+}
+
+.css_top_left {
+    padding: 0.5em;
+}
+
+.css_top_right {
+    padding: 0;
 }
 
 .css_nav_right {
@@ -37,8 +47,8 @@
             color: #fff;
             float: left;
             text-align: center;
-            width: 15%;
             position: relative;
+            padding: 0;
         }
 
         li.active::before {
@@ -51,12 +61,22 @@
             top: 1.2em;
             background-color: #fff;
             border-radius: 50%;
+
+            @media screen and (max-width: 768px) {
+                left: -0.2em;
+            }
+        }
+
+        li:first-child.active::before {
+
+            @media screen and (max-width: 768px) {
+                display: none;
+            }
         }
     }
 }
 
 .css_nav_row {
-
     width: 100%;
     line-height: 2.5em;
     background: linear-gradient(90deg, #5182ee, #7e57ee);
@@ -69,7 +89,6 @@
     }
 
     transition: 0.36s all ease-in-out;
-
 }
 
 // banner区域
@@ -100,6 +119,10 @@ h2 {
     color: #fff;
     text-align: center;
     font-size: 3em;
+
+    @media screen and (max-width: 768px) {
+        font-size: 1.5em;
+    }
 }
 
 .css_banner_left {
@@ -122,10 +145,18 @@ h2 {
         width: 100%;
         overflow: hidden;
 
+        @media screen and (max-width: 768px) {
+            padding-top: 1em;
+        }
+
         li {
             float: left;
             width: 33%;
             height: 3em;
+
+            @media screen and (max-width: 768px) {
+                width: 50%;
+            }
 
             span {
                 color: #fff;
@@ -135,6 +166,7 @@ h2 {
                 line-height: 2em;
                 background-color: #ffffff19;
                 border-radius: 1em;
+                margin: auto;
             }
         }
     }
@@ -146,12 +178,15 @@ h2 {
 
     span {
         float: left;
-        width: 33%;
         font-size: 2em;
-        height: 124px;
-        line-height: 124px;
         text-align: center;
         position: relative;
+        line-height: 3;
+
+        @media screen and (max-width: 768px) {
+            font-size: 1.5em;
+            line-height: 2;
+        }
     }
 
     span.active {
@@ -212,6 +247,11 @@ h2 {
     height: 580px;
     position: relative;
     box-shadow: 0px 1px 29px 0px rgba(136, 56, 244, 0.18);
+    padding: 1em 0;
+
+    @media screen and (max-width: 768px) {
+        overflow: scroll;
+    }
 }
 
 .soft_act_content1 {
@@ -220,14 +260,13 @@ h2 {
 
 .soft_act_content3 {
     background-color: #ffffff;
+    padding-top: 2em;
 }
 
 .soft_act_content2,
 .soft_act_content3 {
     width: 100%;
-    height: 100%;
     overflow: hidden;
-    padding: 5% 0% 2% 0%;
 }
 
 .soft_act_content1,
@@ -258,15 +297,13 @@ h2 {
     width: 100%;
     height: 100%;
     overflow: hidden;
-    padding-left: 6%;
 
     li {
         float: left;
-        width: 90%;
+        width: 100%;
         height: 105px;
         text-align: center;
         opacity: 0.8;
-        padding: 1em;
 
         dt {
             display: block;
@@ -290,8 +327,6 @@ h2 {
 
     .soft_act1_ul1 {
         overflow: hidden;
-        padding-top: 2em;
-        padding-bottom: 1em;
 
         li:first-child {
             margin-bottom: 30px;
@@ -302,12 +337,16 @@ h2 {
         }
 
         li:nth-of-type(3) {}
+
+        @media screen and (max-width:768px) {
+
+            padding: 0;
+        }
     }
 
     .soft_act1_ul2 {
         overflow: hidden;
-        padding-top: 2em;
-        padding-bottom: 1em;
+        padding: 0;
 
         li:first-child {
             margin-bottom: 30px;
@@ -328,16 +367,24 @@ h2 {
     }
 }
 
+.soft_act_content2 {
+    padding-top: 2em;
+}
+
 .soft_act_bottom {
     width: 100%;
     overflow: hidden;
     padding-top: 2em;
     padding-bottom: 3em;
 
+    @media screen and (max-width: 768px) {
+        padding: 0;
+        padding-top: 2em;
+    }
+
     span {
-        float: left;
         width: 33%;
-        padding-left: 10%;
+        float: left;
         text-align: left;
         line-height: 2em;
 
@@ -359,6 +406,12 @@ h2 {
         float: left;
         padding-left: 3em;
         position: relative;
+        text-align: center;
+
+        @media screen and (max-width: 768px) {
+            width: 100%;
+            text-align: center;
+        }
     }
 
     button::before,
@@ -395,13 +448,16 @@ h2 {
         float: left;
         overflow: hidden;
         border-right: 1px dotted $active_border_color;
-        padding-top: 2em;
 
         li {
             float: left;
             width: 100%;
-            padding-left: 20%;
+            text-align: center;
             padding-bottom: 2em;
+
+            @media screen and (max-width: 768px) {
+                padding-bottom: 1em;
+            }
 
             span {
                 float: left;
@@ -417,6 +473,10 @@ h2 {
                 font-size: 1.2em;
             }
         }
+    }
+
+    .css_tab3_ul {
+        padding: 0;
     }
 
     ul:last-child {
@@ -566,6 +626,7 @@ h2 {
     border-bottom: 1px solid #ccc;
     position: relative;
 
+
     span {
         position: relative;
     }
@@ -596,6 +657,7 @@ h2 {
         border-left: 21px solid #ccc;
         border-right: 21px solid transparent;
         border-bottom: 21px solid transparent;
+
     }
 
     span:first-child::before {
@@ -707,7 +769,6 @@ h2 {
             background-repeat: no-repeat;
             background-size: contain;
         }
-
     }
 
     .soft_two_content2 {
@@ -911,6 +972,10 @@ h2 {
         width: 6em;
         height: 5px;
         background-color: #ff74a8;
+
+        @media screen and (max-width: 768px) {
+            margin: auto;
+        }
     }
 }
 
@@ -925,18 +990,34 @@ h2 {
 .css_lesson_content1 {
     .css_lesson_right {
         padding: 8em;
+
+        @media screen and (max-width: 768px) {
+            padding: 0;
+            text-align: center;
+        }
     }
+
 }
 
 .css_lesson_content2 {
     .css_lesson_left {
         padding: 8em;
+
+        @media screen and (max-width: 768px) {
+            padding: 0;
+            text-align: center;
+        }
     }
+
 }
 
 .css_lesson_content3 {
     .css_lesson_right {
         padding: 8em;
+        @media screen and (max-width: 768px) {
+            padding: 0;
+            text-align: center;
+        }
     }
 }
 
@@ -958,6 +1039,11 @@ h2 {
         margin: auto;
         margin-top: -1em;
         background-color: #fff;
+
+        @media screen and (max-width: 768px) {
+            font-size: 1.5em;
+            width: 7em;
+        }
     }
 }
 
@@ -992,6 +1078,10 @@ h2 {
     border-bottom: 1px solid #ccc;
     position: relative;
 
+    @media screen and (max-width: 768px) {
+        width: 70%;
+    }
+
     span {
         position: relative;
     }
@@ -1022,6 +1112,10 @@ h2 {
         border-left: 21px solid #ccc;
         border-right: 21px solid transparent;
         border-bottom: 21px solid transparent;
+
+        @media screen and (max-width: 768px) {
+            margin-top: -22px;
+        }
     }
 
     span:first-child::before {
@@ -1063,16 +1157,19 @@ h2 {
         }
     }
 
+    @media screen and (max-width: 768px) {
+        dt {
+            width: 14em;
+        }
+    }
 }
 
 .soft_class_way {
-
     @media screen and (min-width: 768px) {
         dt {
             width: 6em;
         }
     }
-
 }
 
 .soft_title_box {
@@ -1098,7 +1195,6 @@ h2 {
 .soft_team_item {
     position: absolute;
 }
-
 
 .soft_team_middle {
     background-color: $bgc-light;
@@ -1215,21 +1311,16 @@ h2 {
 //         background-color: #08345a;
 //         box-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
 //     }
-
 //     .soft_team_top {
 //         span {
 //             width: 9em;
 //             height: 9em;
 //         }
 //     }
-
 //     .soft_team_bottom {
 //         box-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
 //     }
 // }
-
-
-
 .soft_team_bottom {
     width: 100%;
     padding-top: 4em;
@@ -1244,7 +1335,6 @@ h2 {
         text-align: center;
     }
 }
-
 
 // 行业内训区域
 .soft_largest_box8 {
@@ -1327,7 +1417,6 @@ h2 {
 }
 
 // 警告文字区域
-
 .error_span {
     font-size: 1.2em;
     display: block;
@@ -1340,9 +1429,8 @@ h2 {
 .soft_open_part {
     padding-left: 3em;
     padding-top: 5em;
-    overflow: hidden;
+    overflow: hidden; // 期数区域
 
-    // 期数区域
     .soft_qi_num {
         float: left;
         width: 100%;
@@ -1376,7 +1464,6 @@ h2 {
     }
 
     .soft_open_describe {
-
         .soft_content1 {
             width: 100%;
             background-color: $background-color;
@@ -1443,7 +1530,6 @@ h2 {
             width: 100%;
         }
 
-
         ul {
             float: left;
             width: 100%;
@@ -1487,7 +1573,6 @@ h2 {
                 background-repeat: no-repeat;
             }
 
-
             li:first-child::before {
                 background-image: url(src/open_icon2.png);
             }
@@ -1499,8 +1584,6 @@ h2 {
             li:nth-of-type(3)::before {
                 background-image: url(src/open_icon4.png);
             }
-
-
         }
     }
 
@@ -1545,7 +1628,6 @@ h2 {
             button:hover {
                 border-color: #347dbb;
             }
-
         }
     }
 
@@ -1747,12 +1829,10 @@ h2 {
     }
 }
 
-
 // 获取验证码框框
 .soft_get_code {
     cursor: pointer;
 }
-
 
 // 优势区域
 .ad_max_div {
@@ -2068,7 +2148,6 @@ h2 {
     margin: 8px 10px;
 }
 
-
 .carousel-indicators li {
     width: 16px;
     margin: -2px 6px;
@@ -2113,11 +2192,11 @@ h2 {
 // 底部测试区域
 .soft_test_part {
     position: relative;
-    background-color: $test_bgcolor;
+    background: linear-gradient(90deg, #5182ee, #7e57ee);
 }
 
 .soft_test_part::after {
-    background-color: $test_bgcolor;
+    background: linear-gradient(90deg, #5182ee, #7e57ee);
     position: absolute;
     bottom: -1em;
     content: '';
@@ -2165,12 +2244,11 @@ h2 {
     button {
         position: relative;
         float: left;
-        color: $primary-color-text;
         width: 8em;
         border-radius: 4px;
         padding-left: 3em;
         margin-top: 0.5em;
-        background-color: #347dbb;
+        background-color: #ffffff19;
     }
 
     button::before {
@@ -2192,7 +2270,6 @@ h2 {
     padding: 2em 1em;
     color: #ffffff;
 
-
     dt {
         float: left;
         font-weight: normal;
@@ -2213,7 +2290,7 @@ h2 {
 }
 
 .soft_bottom_part a {
-    color: #ccc;
+    color: #aaa;
     line-height: 2;
 }
 
