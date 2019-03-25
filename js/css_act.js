@@ -86,15 +86,14 @@ $(document).ready(function () {
         var index = $(this).index();
         $('#tabs_content .soft_lesson_content').eq(index).fadeIn(10).siblings('#tabs_content .soft_lesson_content').hide();
     });
-    $("#open_four .css_open_qi").hover(function () {
-        $(".soft_open_qi").removeClass("active animated pulse");
-        $(this).find(".soft_open_qi").addClass("active animated pulse");
-    });
-    $("#soft_act1 li").click(function () {
+    $("#open_four .soft_open_qi").hover(function () {
         $(this).addClass("active animated pulse").siblings().removeClass("active animated pulse");
-        $("#soft_act2 li").removeClass("active animated pulse");
-
     });
+    // $("#soft_act1 li").click(function () {
+    //     $(this).addClass("active animated pulse").siblings().removeClass("active animated pulse");
+    //     $("#soft_act2 li").removeClass("active animated pulse");
+
+    // });
     // $("#soft_act2 li").click(function () {
     //     $(this).addClass("active animated pulse").siblings().removeClass("active animated pulse");
     //     $("#soft_act1 li").removeClass("active animated pulse");
@@ -333,6 +332,10 @@ $(document).ready(function () {
             $(".soft_top_tab ").addClass("hide1").removeClass("active default");
         }
         if (event.deltaY == 1) {
+            $(".soft_top_tab ").addClass("active").removeClass("hide1 default");
+        }
+        if ($(".soft_top_tab").offset().top < 300) {
+            console.log('dsada');
             $(".soft_top_tab ").addClass("active").removeClass("hide1 default");
         }
     });
